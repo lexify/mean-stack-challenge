@@ -1,3 +1,14 @@
-<p>
-  param-details works!
-</p>
+<div *ngIf="param" class="row">
+  <div class="col-md-12">
+    <h2 *ngIf="param._id">Param Details</h2>
+    <h2 *ngIf="!param._id">New Param</h2>
+  </div>
+</div>
+<div *ngIf="param" class="row">
+  <form class="col-md-12">
+
+    <button class="btn btn-primary" *ngIf="!param._id" (click)="createParam(param)">Create</button>
+    <button class="btn btn-info" *ngIf="param._id" (click)="updateParam(param)">Update</button>
+    <button class="btn btn-danger" *ngIf="param._id" (click)="deleteParam(param._id)">Delete</button>
+  </form>
+</div>

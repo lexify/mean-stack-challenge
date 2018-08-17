@@ -44,7 +44,7 @@ app.post('/api/params', function(req, res) {
   var newParam = req.body;
   newParam.createDate = new Date();
 
-  if(!req.body.name) {
+  if(!req.body.filename) {
     handleError(res, "Invalid user input", 'Must provide a parameter', 400);
   } else {
     db.collection(PARAM_COLLECTION).insertOne(newParam, function(err, docs){
